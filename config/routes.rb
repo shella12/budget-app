@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'group/new'
+  get 'group/create'
+  get 'entity/index'
+  get 'entity/show'
+  get 'entity/new'
+  get 'entity/create'
+  devise_for :users
+  root "entity#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :entity
 end

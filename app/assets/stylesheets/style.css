@@ -1,0 +1,68 @@
+.bg-primary {
+    background-color: #3778c2!important;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.logo_photo {
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+}
+
+.categorylist {
+    width: 100%;
+}
+.entity {
+    background-color:#fff;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+}
+.entity_box {
+width: 100%;
+color: #434b549a;
+padding:0 2rem 0 1rem;
+}
+.entity_box div{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.entity_box div p{
+   color: #434b54;
+   font-weight: 500;
+   font-size: 1.2rem;
+}
+
+.entity_box div a{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.scan-btn{
+    background-color: #5fb523;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+}
+.scan-btn a{
+    display: block;
+    background-color:  #5fb523;
+    border:1px solid white;
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

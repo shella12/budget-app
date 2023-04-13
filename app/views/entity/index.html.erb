@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'style' %>
+<div class="categorylist  d-flex flex-column">
+<% @entities.each do |entity| %>
+<%value = @icons.filter { |value| value.entity == entity }%>
+<div class="entity d-flex">
+    <img src=<%=Group.find(value[0].group_id).icon%> alt='entity_image' class="logo_photo"/>
+  <div class="entity_box d-flex flex-column">
+  <div>
+   <%= link_to "#{entity.name}",entity_path(entity.id)%>
+      <p>$<%=entity.amount%></p>
+      </div>
+      <p><%=entity.created_at.strftime("%d %b %Y")%></p>
+  </div>
+</div>
+<%end %>
+<div class= "scan-btn" >
+<%=link_to "Add new category",entity_new_path %>
+<div>
+</div>
