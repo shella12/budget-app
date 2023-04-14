@@ -1,5 +1,13 @@
-<h2>Log in</h2>
+<%= javascript_include_tag "login" %>
+<div class="splash_screen active" id="splash_screen">
+  <p class="logo">Scrap <br />Splash</p>
+  <div class="action-container">
+    <button id="lgbtn">Log in</button>
+   <%= link_to "Sign up", new_registration_path(resource) %><br />
+</div>
 
+<div>
+<div class="login-form" id="login-form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -24,3 +32,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

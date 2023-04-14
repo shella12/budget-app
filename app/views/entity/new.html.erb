@@ -1,3 +1,4 @@
+<%=render partial: "shared/sub_navbar", locals: {pagename: @pagename, link: 'back'}%>
 <div class="container-fluid">
 <%= form_with model: @entity, url:  entity_index_path, method: :post do |f| %>
 

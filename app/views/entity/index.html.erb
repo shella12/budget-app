@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'style' %>
+<%=render partial: "shared/navbar", locals: {pagename: @pagename}%>
 <div class="categorylist  d-flex flex-column">
 <% @entities.each do |entity| %>
 <%value = @icons.filter { |value| value.entity == entity }%>

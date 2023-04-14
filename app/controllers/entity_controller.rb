@@ -1,4 +1,5 @@
 class EntityController < ApplicationController
+  before_action :authenticate_user!
   def index
     @entities = Entity.all.order(created_at: :desc)
     @icons = EntityGroup.includes(:group).all

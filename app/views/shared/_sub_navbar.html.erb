@@ -1,0 +1,15 @@
+     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+     <%if defined?(link)%>
+      <%= link_to :back do %>
+    <%=image_tag url_for('arrow.png'), class: "search-icon"%>
+   <%end%>
+   <%else%>
+    <%= link_to entity_index_path do %>
+    <%=image_tag url_for('arrow.png'), class: "search-icon"%>
+   <%end%>
+   <%end%>
+
+  </button>
+  <a class="navbar-brand ms-lg-5 ms-md-4 me-sm-3" href="/"><%=pagename%></a>
+  <%=image_tag url_for('search.png'), class: "search-icon"%>
+</nav>

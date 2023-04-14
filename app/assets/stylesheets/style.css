@@ -110,6 +110,19 @@ font-size: 1.0rem;
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.splash_screen {
+visibility: hidden;
+}
+
+.login-form {
+visibility: hidden;
+}
+
+.active {
+ visibility: visible;
 }
 
 @media only screen and (max-width: 367px){

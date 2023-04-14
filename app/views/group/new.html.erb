@@ -1,3 +1,4 @@
+<%=render partial: "shared/sub_navbar", locals: {pagename: @pagename}%>
 <div class="container-fluid">
 <%= form_with model: @group, url: group_index_path , method: :post do |f| %>
 

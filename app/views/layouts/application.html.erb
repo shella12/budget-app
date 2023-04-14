@@ -14,38 +14,8 @@
   </head>
 
   <body>
-       <%if user_signed_in?%>
-      <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-  <button class="navbar-toggler ms-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand ms-lg-5 ms-md-4 me-sm-3" href="/"><%=@pagename%></a>
-  <%=image_tag url_for('search.png'), class: "search-icon"%>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-      <%=link_to "Home", entity_index_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-      <%=link_to "Food", entity_index_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Recipes
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%=link_to "Your Recipes", entity_index_path, class: "dropdown-item" %>
-          <%=link_to "Public Recipes", entity_index_path, class: "dropdown-item" %>
-      </li>
-      <li class="nav-item">
-        <%=link_to "Sign_out", destroy_user_session_path, class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
-</nav>
-      <%end%>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
       <%= yield %>
   </body>
 </html>
