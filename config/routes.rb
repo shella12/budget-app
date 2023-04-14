@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  get 'group/new'
-  get 'group/create'
-  get 'entity/index'
-  get 'entity/show'
-  get 'entity/new'
-  get 'entity/create'
+  get 'splash_screen/index'
   devise_for :users
   root "entity#index"
 
-  resources :entity
+  resources :entity, only: [:index, :show, :new, :create]
+  resources :group, only: [:new, :create]
 end

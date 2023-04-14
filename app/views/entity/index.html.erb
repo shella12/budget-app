@@ -3,7 +3,11 @@
 <% @entities.each do |entity| %>
 <%value = @icons.filter { |value| value.entity == entity }%>
 <div class="entity d-flex">
-    <img src=<%=Group.find(value[0].group_id).icon%> alt='entity_image' class="logo_photo"/>
+<div class="img-container d-flex">
+<%value.each do |image|%>
+<%= image_tag url_for(image.group.icon.variant(resize_to_limit: [100/value.length, 100/value.length])), class: "logo_photo" unless value.empty?%>
+<%end%>
+</div>
   <div class="entity_box d-flex flex-column">
   <div>
    <%= link_to "#{entity.name}",entity_path(entity.id)%>
@@ -14,6 +18,6 @@
 </div>
 <%end %>
 <div class= "scan-btn" >
-<%=link_to "Add new category",entity_new_path %>
+<%=link_to "Add new category", new_group_path %>
 <div>
 </div>

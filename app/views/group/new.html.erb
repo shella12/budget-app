@@ -1,2 +1,30 @@
-<h1>Group#new</h1>
-<p>Find me in app/views/group/new.html.erb</p>
+<div class="container-fluid">
+<%= form_with model: @group, url: group_index_path , method: :post do |f| %>
+
+<div class="form-group">
+  <div class="form-inline mb-3">
+     <%= f.label :name, class: "form-label mr-3" do %>
+       Name
+       <input type="text" name="name" class= "form-control">
+     <%end%>
+  </div>
+  <div class="form-inline mb-3">
+     <%= f.label :icon, class: "form-label mr-3" do %>
+       Upload icon
+       <%= f.file_field :icon %>
+     <%end%>
+  </div>
+<%= f.submit "Add new category", class: "btn btn-primary" %>
+<% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+      <ul>
+      <% @group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+</div>

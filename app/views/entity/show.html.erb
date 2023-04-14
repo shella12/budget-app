@@ -1,2 +1,25 @@
-<h1>Entity#show</h1>
-<p>Find me in app/views/entity/show.html.erb</p>
+<div class="entity-show d-flex flex-column">
+<div class="entity-show-top d-flex">
+<div class="img-container d-flex">
+<%@icons.each do |image|%>
+<%= image_tag url_for(image.group.icon.variant(resize_to_limit: [100/@icons.length, 100/@icons.length])), class: "logo_photo" unless @icons.empty?%>
+<%end%>
+</div>
+<p><%=@entity.name%></p>
+</div>
+<p>Commodi minima excepturi repudiandae velit hic maxime
+doloremque. Quaerat provident commodi consectetur veniam similique ad 
+earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo 
+fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore 
+suscipit quas? Nulla, placeat.</p>
+<hr>
+<h1>Transaction <%=@entity.id%></h1>
+<p><%=@entity.created_at.strftime("%d %b %Y")%></p>
+<hr>
+<div class="d-flex justify-content-between">
+<p class="total-heading">TOTAL PAYMENT</p>
+<p><%=@entity.amount%></p>
+</div>
+<hr>
+<%=link_to "Add new transaction", new_entity_path, class:"btn btn-success"%>
+</div>
