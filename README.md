@@ -203,7 +203,7 @@ If you like this project please give this repo a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Project architecture and requirments provided by Microverse
+ Design credit to [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance the author of the original design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
