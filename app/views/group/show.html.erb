@@ -2,11 +2,9 @@
 <div class="entity-show d-flex flex-column">
 <div class="entity-show-top d-flex">
 <div class="img-container d-flex">
-<%@icons.each do |image|%>
-<%= image_tag url_for(image.group.icon.variant(resize_to_limit: [100/@icons.length, 100/@icons.length])), class: "logo_photo" unless @icons.empty?%>
-<%end%>
+<%= image_tag url_for(@group.icon.variant(resize_to_limit: [100, 100])), class: "logo_photo"%>
 </div>
-<p><%=@entity.name%></p>
+<p><%=@group.name%></p>
 </div>
 <p>Commodi minima excepturi repudiandae velit hic maxime
 doloremque. Quaerat provident commodi consectetur veniam similique ad 
@@ -14,13 +12,15 @@ earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo
 fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore 
 suscipit quas? Nulla, placeat.</p>
 <hr>
-<h1>Transaction <%=@entity.id%></h1>
-<p><%=@entity.created_at.strftime("%d %b %Y")%></p>
+<%@entities.each do |e|%>
+<h1>Transaction <%=e.entity.id%></h1>
+<p><%=e.entity.created_at.strftime("%d %b %Y")%></p>
 <hr>
 <div class="d-flex justify-content-between">
 <p class="total-heading">TOTAL PAYMENT</p>
-<p><%=@entity.amount%></p>
+<p><%=e.entity.amount%></p>
 </div>
 <hr>
+<%end%>
 <%=link_to "Add new transaction", new_entity_path, class:"btn btn-success"%>
 </div>
