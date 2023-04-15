@@ -1,0 +1,38 @@
+<%=render partial: "shared/sub_navbar", locals: {pagename: @pagename, link: 'back'}%>
+<div class="container-fluid">
+<%= form_with model: @entity, url:  entity_index_path(params[:id]), method: :post do |f| %>
+
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="h3">Add New Transaction</h1>
+<%= link_to "Add New Category",  new_group_path, class: "btn btn-success" %>
+</div>
+
+<div class="form-group">
+<div class="form-inline mb-3">
+     <%= f.label :name, class: "form-label mr-3" do %>
+       Name
+       <input type="text" name="name" class= "form-control">
+     <%end%>
+  </div>
+  <div class="form-inline mb-3">
+     <%= f.label :amount, class: "form-label mr-3" do %>
+       Amount
+       <input type="number" name="amount" min="0" step="0.1" class= "form-control">
+     <%end%>
+  </div>
+<%@categories.each do |category|%>
+ 
+  <div class="form-inline mb-3">
+ <%= f.label :category, class: "form-check-label mr-3" do %>
+    <input type="checkbox" name="category[]" value="<%=category.id%>">
+  <%=category.name%>
+  <%end%>
+  </div>
+
+<%end%>
+
+<%= f.submit "Add Transaction", class: "btn btn-primary" %>
+<% end %>
+
+</div>
+

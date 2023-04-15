@@ -63,6 +63,12 @@ The **Budget app** keeps track of your transcations It allows the user to:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Live demo <a name="live-demo"></a>
+
+Click this [live demo](https://budget-app-k2i1.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>

@@ -1,0 +1,21 @@
+
+<div class="signup-form">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<%=render partial: "shared/signup_navbar", locals: {pagename: "SIGNUP", link: 'back', f: f}%>
+  
+  <div class="form-field">
+   
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Full Name" %>
+  <hr>
+   
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+ <hr>
+   
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password (6 characters minimum)" %>
+<hr>
+   
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
+  </div>
+<% end %>
+</div>

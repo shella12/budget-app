@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'style' %>
+<%=render partial: "shared/navbar", locals: {pagename: @pagename}%>
+<div class="categorylist  d-flex flex-column">
+<% @groups.each do |group| %>
+<%amount = @amounts.filter { |value| value.group_id == group.id }%>
+<div class="entity d-flex">
+<div class="img-container d-flex">
+<%= image_tag url_for(group.icon.variant(resize_to_limit: [100, 100])), class: "logo_photo"%>
+</div>
+  <div class="entity_box d-flex flex-column">
+  <div>
+   <%= link_to "#{group.name}",group_path(group.id)%>
+   <%if amount.empty?%>
+       <p>$0</p>
+      <%else%>
+      <p>$<%=amount[0].total_amount %></p>
+      <%end%>
+      </div>
+      <p><%=group.created_at.strftime("%d %b %Y")%></p>
+  </div>
+</div>
+<%end %>
+<div class= "scan-btn" >
+<%=link_to "Add new category", new_group_path %>
+<div>
+</div>
