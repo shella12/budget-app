@@ -65,7 +65,7 @@ The **Budget app** keeps track of your transcations It allows the user to:
 
 ### Live demo <a name="live-demo"></a>
 
-Click this [live demo](https://budget-app-0yss.onrender.com)
+Click this [live demo](https://budget-app-k2i1.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
