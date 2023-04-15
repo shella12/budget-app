@@ -115,6 +115,15 @@ font-size: 1.0rem;
 
 .splash_screen {
 visibility: hidden;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #fff; /* or use an image */
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .login-form {
@@ -124,6 +133,92 @@ visibility: hidden;
 .active {
  visibility: visible;
 }
+  
+.splash_screen h1 {
+    color: #434b54;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Brush Script MT", cursive, sans-serif;
+  }
+  
+  #button-container {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #login-button, #signup-button {
+    width: 100%;
+    height: 3rem;
+    background-color: #fff;
+    color: #434b546e;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+
+  #login-button {
+    background-color: #3778c2;
+    color: #fff;
+  }
+  
+  #login-button:hover {
+    background-color: #0e71e2;
+  }
+
+  #signup-button:hover {
+    color: snow;
+    background-color: #555;
+  }
+
+  .login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign_up_btn {
+    background-color: #3778c2;
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    margin-right: 1rem ;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .form-field {
+   width: 100%;
+   background-color: #fff;
+   padding: 0.5rem;
+   margin-top: 2rem;
+   border: 1px solid transparent;
+   border-bottom-color: #434b5470;
+   border-top-color: #434b5470;
+  }
+
+  .form-field input {
+    width: 100%;
+    padding: 0.3rem;
+    border: none;
+    outline: none;
+  }
+
+  #forget-link {
+   align-self: center;
+   color: #434b5460;
+   font-size: 0.8rem;
+   margin-top: 1.5rem;
+  }
+
+  
 
 @media only screen and (max-width: 367px){
     .img-container {

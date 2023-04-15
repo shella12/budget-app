@@ -1,0 +1,11 @@
+     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+    <%= link_to entity_index_path do %>
+    <%=image_tag url_for('arrow.png'), class: "search-icon"%>
+   <%end%>
+  <a class="navbar-brand ms-lg-5 ms-md-4 me-sm-3" href="/"><%=pagename%></a>
+  <% if (pagename=="LOGIN")%>
+  <%= f.submit "Log in", class:"sign_up_btn" %>
+  <% else %>
+<%= f.submit "Sign up", class:"sign_up_btn" %>
+  <%end%>
+</nav>

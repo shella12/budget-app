@@ -1,33 +1,20 @@
 <%= javascript_include_tag "login" %>
-<div class="splash_screen active" id="splash_screen">
-  <p class="logo">Scrap <br />Splash</p>
-  <div class="action-container">
-    <button id="lgbtn">Log in</button>
-   <%= link_to "Sign up", new_registration_path(resource) %><br />
+<div class="splash_screen active" id="splash">
+  <h1 class="logo">budge <br />it!</h1>
+   <div id="button-container">
+    <button id="login-button">Log in</button>
+   <%= link_to "Sign up",new_registration_path(resource), id: "signup-button" %><br />
+  </div>
 </div>
 
 <div>
 <div class="login-form" id="login-form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <%=render partial: "shared/signup_navbar", locals: {pagename: "LOGIN", link: 'back', f: f}%>
+  <div class="form-field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+<hr>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password"  %>
   </div>
 <% end %>
 
