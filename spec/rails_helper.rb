@@ -55,9 +55,28 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Warden::Test::Helpers, type: :system
+  config.include Warden::Test::Helpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :system
+  config.render_views = true
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
+  Capybara.default_driver = :selenium_chrome
+  # arbitrary gems may also be filtered via:
+  # config.filter_gems_from_backtrace("gem name")
+  # rails_helper.rb or spec_helper.rb
+  config.include FactoryBot::Syntax::Methods
+end
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+
+  # Filter lines from Rails gems in backtraces.
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
