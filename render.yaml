@@ -7,7 +7,7 @@ services:
   - type: web
     name: budget_app_development
     env: ruby
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "bundle exec rails assets:precompile"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
