@@ -23,7 +23,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Recipe-app] <a name="about-project"></a>
+# 📖 [BudgeIt] <a name="about-project"></a>
 
 The **Budget app** keeps track of your transcations It allows the user to:
 
